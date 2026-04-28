@@ -52,7 +52,7 @@ function App() {
         />
       </div>
 
-      <main className={`icp-main ${isSuccess ? 'icp-main--success' : ''}`}>
+      <main className="icp-main">
         {/* ── Left card ──────────────────────────────────────── */}
         <section className="icp-card">
           {isSuccess ? (

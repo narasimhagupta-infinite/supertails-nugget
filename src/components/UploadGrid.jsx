@@ -1,9 +1,7 @@
-import { useRef } from 'react';
 import { MAX_FILES } from '../constants/config';
 import './UploadGrid.css';
 
 export default function UploadGrid({ previews, files, onAddFiles, onRemoveFile }) {
-    const inputRef = useRef(null);
     const canAddMore = files.length < MAX_FILES;
     const isSingleRow = files.length < 3; // ≤2 images + add tile fits in one row
 
@@ -23,7 +21,6 @@ export default function UploadGrid({ previews, files, onAddFiles, onRemoveFile }
             <div className="upload-zone">
                 {/* Hidden file input */}
                 <input
-                    ref={inputRef}
                     id="icp-file-input"
                     type="file"
                     accept="image/jpeg,image/png,image/gif,image/webp"

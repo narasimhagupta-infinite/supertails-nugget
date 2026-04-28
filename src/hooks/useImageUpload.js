@@ -89,7 +89,6 @@ export default function useImageUpload() {
                 const failed = results.find((r) => !r.success);
                 if (failed) {
                     setError(failed.error);
-                    setIsUploading(false);
                     return;
                 }
 
@@ -99,7 +98,6 @@ export default function useImageUpload() {
                 const ticketResult = await updateTicket(ticketId, imageUrls);
                 if (!ticketResult.success) {
                     setError(ticketResult.error);
-                    setIsUploading(false);
                     return;
                 }
 
