@@ -21,9 +21,6 @@ export const ALLOWED_EXTENSIONS = ['JPG', 'JPEG', 'PNG', 'GIF', 'WEBP'];
 export const UPLOAD_TIMEOUT_MS = 120_000; // 120 s
 export const TICKET_TIMEOUT_MS = 30_000; //  30 s
 
-// ── Session Storage ────────────────────────────────────────────
-export const SESSION_KEY = 'icp_attachments_payload';
-
 // ── Error Messages ─────────────────────────────────────────────
 export const ERRORS = {
     NO_FILES: 'Please upload an image to continue',

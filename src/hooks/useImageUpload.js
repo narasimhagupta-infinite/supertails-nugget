@@ -5,7 +5,6 @@ import {
     ALLOWED_TYPES,
     ALLOWED_EXTENSIONS,
     ERRORS,
-    SESSION_KEY,
 } from '../constants/config';
 import { uploadFile, updateTicket } from '../services/uploadService';
 
@@ -104,11 +103,7 @@ export default function useImageUpload() {
                     return;
                 }
 
-                // 3. Persist to sessionStorage
-                const payload = { ticket_id: ticketId, image_urls: imageUrls };
-                sessionStorage.setItem(SESSION_KEY, JSON.stringify(payload));
-
-                // 4. Cleanup blob URLs & show success
+                // 3. Cleanup blob URLs & show success
                 revokePreviews(previews);
                 setIsSuccess(true);
             } catch {
