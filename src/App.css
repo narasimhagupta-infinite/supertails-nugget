@@ -211,12 +211,16 @@
 
 @media (max-width: 860px) {
   .icp-page {
+    min-height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: #eef0f2;
   }
 
   .icp-main {
     flex-direction: column;
-    min-height: calc(100vh - 77px);
+    min-height: auto;
+    overflow: visible;
     margin-top: -69px;
     position: relative;
     z-index: 2;

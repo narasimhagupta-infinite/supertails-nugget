@@ -57,6 +57,7 @@
     padding: 0;
     gap: 24px;
     width: 100%;
+    padding-bottom: 12px;
 }
 
 /* ── Single row (≤3 items) — centered with wider gap ──────────── */
@@ -231,6 +232,7 @@
     .upload-grid {
         gap: 20px;
         justify-content: center;
+        padding: 12px;
     }
 
     .upload-grid--single-row {
