@@ -3,7 +3,7 @@ export const UPLOAD_API_URL =
     'https://supertails-backend.el.r.appspot.com/upload';
 
 export const UPDATE_TICKET_API_URL =
-    'https://st-staging.supertails.com/order/crm/update-ticket';
+    'https://supertails-backend.el.r.appspot.com/order/crm/update-ticket';
 
 // ── Validation ─────────────────────────────────────────────────
 export const MAX_FILES = 5;
