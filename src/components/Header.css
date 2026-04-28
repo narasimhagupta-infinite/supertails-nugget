@@ -1,0 +1,23 @@
+.icp-header {
+  width: 100%;
+  background: #000;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.icp-header__inner {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icp-header__logo {
+  height: 36px;
+  width: auto;
+}

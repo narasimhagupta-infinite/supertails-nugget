@@ -1,0 +1,308 @@
+/* ══════════════════════════════════════════════════════════════
+   App.css — Figma-accurate desktop layout
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Page shell ───────────────────────────────────────────────── */
+.icp-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f0;
+}
+
+/* ── Mobile hero (hidden on desktop) ──────────────────────────── */
+.icp-mweb-hero {
+  display: none;
+}
+
+.icp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Main split layout ────────────────────────────────────────── */
+.icp-main {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: calc(100vh - 77px);
+  overflow: hidden;
+}
+
+/* ── Upload card (left half) ──────────────────────────────────── */
+.icp-card {
+  flex: 0 0 50%;
+  width: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 64px;
+  min-width: 0;
+}
+
+.icp-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 32px;
+  width: 512px;
+  max-width: 100%;
+}
+
+/* ── Title block ──────────────────────────────────────────────── */
+.icp-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.icp-card__title {
+  margin: 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #0B1215;
+}
+
+.icp-card__subtitle {
+  margin: 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+  text-align: center;
+  color: #4B5563;
+}
+
+/* ── Continue button ──────────────────────────────────────────── */
+.icp-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: #FF6914;
+  transition: background 0.15s, transform 0.1s;
+  box-sizing: border-box;
+}
+
+.icp-btn:hover:not(:disabled) {
+  background: #e85e10;
+}
+
+.icp-btn:active:not(:disabled) {
+  background: #d4560e;
+  transform: scale(0.985);
+}
+
+.icp-btn:focus-visible {
+  outline: 3px solid #f9a86c;
+  outline-offset: 2px;
+}
+
+.icp-btn--disabled,
+.icp-btn:disabled {
+  background: #CCCCCC;
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ──────────────────────────────────────────────────── */
+.icp-btn__spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Aside hero (desktop) ─────────────────────────────────────── */
+.icp-aside {
+  flex: 0 0 50%;
+  width: 50%;
+  background: linear-gradient(114.2deg, #FAF9C7 1.49%, #E8FAD9 94.01%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icp-aside .icp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Success layout (all viewports) ───────────────────────────── */
+.icp-page--success .icp-main {
+  min-height: calc(100vh - 77px);
+  margin-top: 0;
+}
+
+.icp-page--success .icp-aside {
+  display: none;
+}
+
+.icp-page--success .icp-card {
+  flex: 1 1 100%;
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+  justify-content: center;
+  background: #ffffff;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .icp-card__content {
+    width: 100%;
+  }
+
+  .icp-card__title {
+    font-size: 36px;
+  }
+
+  .icp-card__subtitle {
+    font-size: 20px;
+  }
+
+  .icp-card {
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 860px) {
+  .icp-page {
+    background: #eef0f2;
+  }
+
+  .icp-main {
+    flex-direction: column;
+    min-height: calc(100vh - 77px);
+    margin-top: -69px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .icp-page--success .icp-mweb-hero {
+    display: none;
+  }
+
+  .icp-page--success .icp-main {
+    z-index: 2;
+  }
+
+  .icp-aside {
+    display: none;
+  }
+
+  .icp-mweb-hero {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .icp-mweb-hero .icp-hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .icp-card {
+    flex: 0 0 auto;
+    width: 100%;
+    flex: 1;
+    margin-top: 0;
+    border-radius: 24px 24px 0 0;
+    padding: 16px 16px calc(96px + env(safe-area-inset-bottom));
+    justify-content: flex-start;
+  }
+
+  .icp-page--success .icp-card {
+    justify-content: center;
+  }
+
+  .icp-card__content {
+    width: 343px;
+    gap: 16px;
+  }
+
+  .icp-card__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .icp-card__subtitle {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .icp-btn--primary {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: auto;
+    max-width: none;
+    z-index: 40;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  }
+}
+
+@media (max-width: 480px) {
+  .icp-card {
+    width: 100%;
+    padding: 24px 16px calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .icp-card__title {
+    font-size: 24px;
+  }
+
+  .icp-card__subtitle {
+    font-size: 14px;
+  }
+
+  .icp-mweb-hero {
+    height: auto;
+  }
+}
