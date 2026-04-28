@@ -1,10 +1,9 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef } from 'react';
 import { MAX_FILES } from '../constants/config';
 import './UploadGrid.css';
 
 export default function UploadGrid({ previews, files, onAddFiles, onRemoveFile }) {
     const inputRef = useRef(null);
-    const [isDragOver, setIsDragOver] = useState(false);
     const canAddMore = files.length < MAX_FILES;
     const isSingleRow = files.length < 3; // ≤2 images + add tile fits in one row
 
@@ -15,36 +14,13 @@ export default function UploadGrid({ previews, files, onAddFiles, onRemoveFile }
         }
     };
 
-    const handleDragOver = useCallback((e) => {
-        e.preventDefault();
-        setIsDragOver(true);
-    }, []);
-
-    const handleDragLeave = useCallback(() => setIsDragOver(false), []);
-
-    const handleDrop = useCallback(
-        (e) => {
-            e.preventDefault();
-            setIsDragOver(false);
-            if (e.dataTransfer.files?.length) {
-                onAddFiles(e.dataTransfer.files);
-            }
-        },
-        [onAddFiles],
-    );
-
     return (
         <div className="upload-section">
             {/* ── Section label ─────────────────────────────────────── */}
             <h2 className="upload-section__label">Upload image</h2>
 
-            {/* ── Drop zone + grid ──────────────────────────────────── */}
-            <div
-                className={`upload-zone ${isDragOver ? 'upload-zone--drag' : ''}`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-            >
+            {/* ── File picker + grid ────────────────────────────────── */}
+            <div className="upload-zone">
                 {/* Hidden file input */}
                 <input
                     ref={inputRef}

@@ -29,11 +29,6 @@
 /* ── Drop zone ────────────────────────────────────────────────── */
 .upload-zone {
     width: 100%;
-    transition: background 0.2s;
-}
-
-.upload-zone--drag {
-    background: rgba(255, 105, 20, 0.03);
 }
 
 .upload-zone__input {
